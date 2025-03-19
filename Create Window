@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class JanelaComIcone {
+      public static void main(String[] args) {
+            // Criação do JFrame
+            JFrame frame = new JFrame("TImeSkip");
+
+            // Caminho do ícone
+            String caminhoDoIcone = "C:\\Users\\Admin\\Desktop\\Faculdade\\4º Semestre\\Projeto Integrador - Engenharia de Software\\Projeto TImeSkip\\Adobe Express - file.png"; // Certifique-se de ter a extensão correta
+
+            // Tentativa de carregar a imagem com ImageIcon
+            ImageIcon icone = new ImageIcon(caminhoDoIcone);
+
+            // Verificando se a imagem foi carregada com sucesso
+            if (icone.getImageLoadStatus() == MediaTracker.ERRORED) {
+                  System.out.println("Erro ao carregar o ícone.");
+            } else {
+                  frame.setIconImage(icone.getImage());
+            }
+
+            // Definindo o comportamento de fechamento
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            // Configuração do tamanho da janela
+            frame.setSize(800, 600);
+
+            // Tornando a janela visível
+            frame.setVisible(true);
+      }
+}
